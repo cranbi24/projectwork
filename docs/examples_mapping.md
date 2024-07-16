@@ -3,7 +3,7 @@ Rule: The User has correct username and password, and login was success.
 Example: An User give on the form a correct username and password.
 
 User story 2: Check for login failure
-Rule: The User dosn't give correct username or password, and login is failed.
+Rule: The User doesn't give correct username or password, and login is failed.
 Example: An User give a wrong username and correct password, but come an error message.
 
 User story 3: Language change
