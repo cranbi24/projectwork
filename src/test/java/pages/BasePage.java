@@ -10,7 +10,6 @@ import java.time.Duration;
 
 public class BasePage {
 
-// https://bevasarlas.tesco.hu/groceries/hu-HU
 
     protected WebDriver driver;
     protected WebDriverWait wait;
