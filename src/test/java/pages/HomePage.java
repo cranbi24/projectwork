@@ -16,6 +16,12 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"search-form\"]/button")
     WebElement searchButton;
 
+    @FindBy(xpath = "//*[@id=\"utility-header-language-switch-link\"]")
+    WebElement languageFlag;
+
+    @FindBy(xpath = "//*[@id=\"utility-header-registration-link\"]/span")
+    WebElement checkLanguageElement;
+
     public HomePage(WebDriver inputDriver) {
         super(inputDriver);
     }
@@ -36,5 +42,14 @@ public class HomePage extends BasePage {
         return searchResultPage;
     }
 
-
+    public void changeLanguage() {
+        languageFlag.click();
+    }
+/*
+    public WebElement getCheckLanguageElement() {
+        if(  checkLanguageElement.getText())
+        Assertions.assertEquals();
+        return null;
+    }*/
 }
+

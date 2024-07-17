@@ -6,7 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,7 +16,7 @@ import pages.SearchResultPage;
 
 import java.time.Duration;
 
-public class SearchSteps {
+public class TescoSteps {
     protected static WebDriver driver;
     protected static Wait wait;
     private HomePage homePage;
@@ -34,7 +33,7 @@ public class SearchSteps {
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        driver.manage().window().setSize(new Dimension(900, 900));
+        driver.manage().window().maximize();
     }
 
 
@@ -77,4 +76,13 @@ public class SearchSteps {
     }
 
 
+    @When("I change the language to {string}")
+    public void changeLanguage() {
+        homePage.changeLanguage();
+    }
+
+    @Then("language is changed to {string}")
+    public void languageIsChanged(String language) {
+
+    }
 }
