@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage {
+
 
     @FindBy(xpath = "//*[@id=\"sticky-bar-cookie-wrapper\"]/span/div/div/div[2]/form[1]/button")
     WebElement cookieButton;
@@ -27,9 +27,9 @@ public class HomePage extends BasePage {
     public SearchResultPage search(String searchWord) {
         searchField.sendKeys(searchWord);
         searchButton.click();
-        SearchResultPage searchResultPage = new SearchResultPage(inputDriver);
-        searchResultPage.
-        return resultPage;
+        SearchResultPage searchResultPage = new SearchResultPage(driver);
+        searchResultPage.isLoaded();
+        return searchResultPage;
     }
 
 

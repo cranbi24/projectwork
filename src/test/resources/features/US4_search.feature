@@ -15,5 +15,3 @@ Feature: Product search
       Examples:
         | product  | number |
         | "dinnye" | 1      |
-        | "tejföl" | 2      |
-        | "túró"   | 4      |

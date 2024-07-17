@@ -40,32 +40,37 @@ public class SearchSteps {
     public static void cleanup() {
         driver.quit();
     }
-    @Given("I open Tesco webshop website")
-    public void iOpenHP() {
-        driver.get("https://bevasarlas.tesco.hu/groceries/hu-HU");
-        homePage=new HomePage(driver);
 
+    @Given("I open Tesco webshop website")
+    public void openHP() {
+        driver.get("https://bevasarlas.tesco.hu/groceries/hu-HU");
+        homePage = new HomePage(driver);
 
     }
 
     @And("I accept all cockies")
-    public void iAcceptAllCockies() {
+    public void acceptAllCockies() {
+        homePage.acceptCookies();
     }
 
     @Given("search field is visible")
     public void searchFieldIsVisible() {
+
     }
 
     @When("I search for a {string}")
-    public void iSearchForA(String arg0) {
+    public void search(String product) {
+        searchResultPage = homePage.search(product);
     }
 
     @Then("{string} of products shows in the result page")
     public void ofProductsShowsInTheResultPage(String arg0) {
+
     }
 
     @And("productname containes {string}")
     public void productnameContaines(String arg0) {
+
     }
 
 

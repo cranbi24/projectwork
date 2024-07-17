@@ -11,18 +11,21 @@ import java.time.Duration;
 public class BasePage {
 
 
-    protected WebDriver driver;
-    protected WebDriverWait wait;
+    protected static WebDriver driver;
+    protected static WebDriverWait wait;
 
     public BasePage(WebDriver inputDriver) {
         this.driver = inputDriver;
         this.wait = new WebDriverWait(inputDriver, Duration.ofSeconds(1));
-        PageFactory.initElements(inputDriver,this);
+        PageFactory.initElements(inputDriver, this);
     }
 
     protected boolean isLoaded(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
+
+    //| "tejföl" | 2      |
+    //| "túró"   | 4      |
 
 }
 
