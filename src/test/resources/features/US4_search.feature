@@ -14,4 +14,6 @@ Feature: Product search
 
       Examples:
         | product  | number |
-        | "dinnye" | 1      |
+        | dinnye   | 24     |
+        | dió      | 7      |
+        | szalvéta | 17     |

@@ -24,6 +24,10 @@ public class HomePage extends BasePage {
         cookieButton.click();
     }
 
+    public void searchVisible() {
+        searchField.isDisplayed();
+    }
+
     public SearchResultPage search(String searchWord) {
         searchField.sendKeys(searchWord);
         searchButton.click();

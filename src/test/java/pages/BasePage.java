@@ -24,8 +24,9 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
 
-    //| "tejföl" | 2      |
-    //| "túró"   | 4      |
-
 }
+/*
+        | dió      | 7      |
+        | szalvéta | 17     |
+*/
 

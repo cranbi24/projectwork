@@ -1,11 +1,11 @@
 package steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,7 +23,8 @@ public class SearchSteps {
     private HomePage homePage;
     private SearchResultPage searchResultPage;
 
-    @BeforeAll
+
+    @Before
     public static void setup() {
         // set chrome options
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -36,10 +37,6 @@ public class SearchSteps {
         driver.manage().window().setSize(new Dimension(900, 900));
     }
 
-    @AfterAll
-    public static void cleanup() {
-        driver.quit();
-    }
 
     @Given("I open Tesco webshop website")
     public void openHP() {
@@ -55,22 +52,28 @@ public class SearchSteps {
 
     @Given("search field is visible")
     public void searchFieldIsVisible() {
-
+        homePage.searchVisible();
     }
 
     @When("I search for a {string}")
     public void search(String product) {
         searchResultPage = homePage.search(product);
+        searchResultPage.isLoaded();
     }
 
     @Then("{string} of products shows in the result page")
-    public void ofProductsShowsInTheResultPage(String arg0) {
-
+    public void productNumber(String productNumber) {
+        searchResultPage.searchItemCount(productNumber);
     }
 
     @And("productname containes {string}")
-    public void productnameContaines(String arg0) {
+    public void productnameContaines(String product) {
+        searchResultPage.searchProduct(product);
+    }
 
+    @After
+    public static void cleanup() {
+        driver.quit();
     }
 
 
