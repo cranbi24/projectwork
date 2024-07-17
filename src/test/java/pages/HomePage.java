@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class HomePage extends BasePage {
 
 
@@ -21,6 +23,9 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"utility-header-registration-link\"]/span")
     WebElement checkLanguageElement;
+
+    private final String registrationInEnglish = "Register";
+    private final String registrationInHungarian = "Regisztráció";
 
     public HomePage(WebDriver inputDriver) {
         super(inputDriver);
@@ -42,14 +47,14 @@ public class HomePage extends BasePage {
         return searchResultPage;
     }
 
-    public void changeLanguage() {
+    public void changeLanguage(String language) {
         languageFlag.click();
     }
-/*
-    public WebElement getCheckLanguageElement() {
-        if(  checkLanguageElement.getText())
-        Assertions.assertEquals();
-        return null;
-    }*/
+
+    public void getCheckLanguageElement(String language) {
+        assertTrue((language.equals("English") && checkLanguageElement.getText().equals(registrationInEnglish))
+                || (language.equals("Hungarian") && checkLanguageElement.getText().equals(registrationInHungarian)));
+
+    }
 }
 

@@ -77,12 +77,17 @@ public class TescoSteps {
 
 
     @When("I change the language to {string}")
-    public void changeLanguage() {
-        homePage.changeLanguage();
+    public void changeLanguage(String language) {
+        homePage.changeLanguage(language);
     }
 
     @Then("language is changed to {string}")
     public void languageIsChanged(String language) {
+        homePage.getCheckLanguageElement(language);
+    }
 
+    @Given("language is set to {string}")
+    public void languageIsSetToHungarian(String language) {
+        homePage.getCheckLanguageElement(language);
     }
 }
