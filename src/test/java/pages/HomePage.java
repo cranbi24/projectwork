@@ -27,7 +27,9 @@ public class HomePage extends BasePage {
     public SearchResultPage search(String searchWord) {
         searchField.sendKeys(searchWord);
         searchButton.click();
-        return new SearchResultPage(driver);
+        SearchResultPage searchResultPage = new SearchResultPage(inputDriver);
+        searchResultPage.
+        return resultPage;
     }
 
 

@@ -13,7 +13,7 @@ Feature: Product search
       And productname containes "<product>"
 
       Examples:
-        | product | number |
-        | "dinnye" | 1 |
-        | "tejföl" | 2 |
-        | "túró" | 4 |
+        | product  | number |
+        | "dinnye" | 1      |
+        | "tejföl" | 2      |
+        | "túró"   | 4      |
