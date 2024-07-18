@@ -1,4 +1,4 @@
-package pages;
+package withoutSelenide.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-
 
     protected static WebDriver driver;
     protected static WebDriverWait wait;
@@ -23,10 +22,6 @@ public class BasePage {
     protected boolean isLoaded(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-
 }
-/*
-        | dió      | 7      |
-        | szalvéta | 17     |
-*/
+
 

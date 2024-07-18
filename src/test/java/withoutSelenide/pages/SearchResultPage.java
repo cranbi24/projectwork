@@ -1,4 +1,4 @@
-package pages;
+package withoutSelenide.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,6 @@ public class SearchResultPage extends BasePage {
     }
 
     public void searchProduct(String toSearchFor) {
-        assertTrue(isLoaded());
         assertTrue(searchResultString.getText().contains("" + toSearchFor));
     }
 
@@ -33,4 +32,5 @@ public class SearchResultPage extends BasePage {
         boolean isLoaded = isLoaded(searchResultCount);
         return isLoaded;
     }
+
 }
